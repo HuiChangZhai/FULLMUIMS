@@ -1,0 +1,338 @@
+﻿body {
+}
+* {
+    margin:0px;
+    padding:0px;
+}
+
+body{
+    background-color: #0f5071;
+    font-size: 10pt;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    width:90%;
+    min-width:500px;
+    margin:auto;
+}
+
+#page{
+    width: 100%;
+    margin: auto;
+}
+
+#header{
+    clear: both;
+    width: 100%;
+    height: 109px;
+    border-radius:10px 10px;
+    -moz-border-radius:10px 10px;
+    -webkit-border-radius:10px 10px;
+    background:linear-gradient(top,#3cd5e4,#1f5e63);
+    background:-webkit-linear-gradient(top,#3cd5e4,#1f5e63);/*#3cd5e4,#2b848b*/
+    background:-moz-linear-gradient(top,#3cd5e4,#1f5e63);
+    margin:10px 0px;
+    padding-left: 60px;
+    padding-top: 15px;
+    color:#FFFFFF;
+    box-sizing:border-box;
+}
+
+#header a.CompanyName{
+    text-decoration:none;
+    color:#FFFFFF;
+}
+
+#header a.CompanyName:hover {
+    text-decoration:underline;
+    color:#FFFFFF;
+}
+
+#mainarea {
+    background: #ffffff;
+    border-radius:10px 10px;
+    -moz-border-radius:10px 10px;
+    -webkit-border-radius:10px 10px;
+}
+
+.IndexMain {
+    padding:0px 30px 30px 30px ;
+}
+
+.EnterpriseBrief:before{
+    content:"企业介绍";
+    display:block;
+    padding:10px 20px;
+    color:#ffffff;
+    height:20px;
+    background: #3171e4;
+    border-radius:5px 5px 0px 0px;
+    -moz-border-radius:5px 5px 0px 0px;
+    -webkit-border-radius:5px 5px 0px 0px;
+}
+
+.EnterpriseBrief {
+    font-size:14px;
+    border:1px solid #3171e4;
+    border-top:0px;
+    margin:10px 0px;
+    border-radius:5px 5px 5px 5px;
+    -moz-border-radius:5px 5px 5px 5px;
+    -webkit-border-radius:5px 5px 5px 5px;
+}
+
+.EnterpriseBriefContent {
+    text-indent:2em;
+    padding:10px 10px 30px 10px;
+}
+
+.enterpriseBriefMain {
+    padding:10px 30px;
+}
+
+.caseList:before {
+    content:"成功案例";
+}
+
+.dynamicList:before {
+    content:"企业动态";
+}
+
+.caseList:before,.dynamicList:before{
+    display:block;
+    padding:10px 20px;
+    color:#ffffff;
+    height:20px;
+    background: #3171e4;
+    border-radius:5px 5px 0px 0px;
+    -moz-border-radius:5px 5px 0px 0px;
+    -webkit-border-radius:5px 5px 0px 0px;
+}
+
+.caseList,.dynamicList {
+    border:1px solid #3171e4;
+    border-top:0px;
+    margin:10px 0px;
+    border-radius:5px 5px 5px 5px;
+    -moz-border-radius:5px 5px 5px 5px;
+    -webkit-border-radius:5px 5px 5px 5px;
+}
+
+.IndexArticleTitleDiv {
+    display:inline-block;
+    padding:3px 20px;
+    background:#ebebeb;
+    margin:5px;
+    border-radius:5px 5px 5px 5px;
+    -moz-border-radius:5px 5px 5px 5px;
+    -webkit-border-radius:5px 5px 5px 5px;
+}
+
+.IndexArticleTitleDiv a:hover {
+    color:#3171e4;
+}
+
+.EPAchieveCaseMain, .EPDynamicMain {
+    padding:10px 20px 50px 20px;
+}
+
+.EPAchieveCaseMain:after, .EPDynamicMain:after {
+    clear:both;
+}
+
+.enterpriseCaseItemsLine, .dynamicItemsLine {
+    margin-bottom:10px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+
+.enterpriseCasesItem, .dynamicItem {
+    height:180px;
+    border:1px solid #968989;
+    border-radius:5px 5px;
+    -moz-border-radius:5px 5px;
+    -webkit-border-radius:5px 5px;
+}
+
+.enterpriseCasesItem, .dynamicItem {
+    background: #eeeeee;
+}
+
+.enterpriseCaseItemContent, .dynamicItemContent{
+    padding:12px;
+    height:120px;
+    overflow:hidden;
+}
+.enterpriseCasesItem:hover,.dynamicItem:hover{
+    border:1px solid #e8bf9d;
+}
+
+.enterpriseCaseItemTitle, .dynamicItemTitle {
+    border-bottom:1px solid #d5d5d5;
+    font-weight:bold;
+    padding:12px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    word-break:break-all;
+    text-overflow:ellipsis;
+}
+
+.noRecord-return {
+    
+}
+
+.return-to-list {
+    clear:both;
+    padding:10px 0px;
+    text-align:center;
+    border-radius:0px 0px 10px 10px;
+    -moz-border-radius:0px 0px 10px 10px;
+    -webkit-border-radius:0px 0px 10px 10px;
+    background:#3171e4;
+}
+
+.return-to-list a {
+    color:#ffffff;
+}
+
+#PagingDiv {
+    padding:10px 0px;
+    text-align:center;
+    border-radius:0px 0px 10px 10px;
+    -moz-border-radius:0px 0px 10px 10px;
+    -webkit-border-radius:0px 0px 10px 10px;
+    background:#3171e4;
+}
+
+.-paging-PagingItens {
+    text-decoration:underline;
+    cursor:pointer;
+    font-size:14px;
+    color:#d7d7d7;
+}
+
+.-paging-CurrentPageItem {
+    font-size:16px;
+    color:#FFFFFF;
+}
+
+.-paging-NoFocusItem {
+    font-size:14px;
+    color:#d7d7d7;
+}
+
+/*@media screen and (min-width:1000px) {
+    #mainarea {
+        background: #ffffff;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #mainarea {
+        background:#3cd5e4;
+    }
+}*/
+
+
+#sidebarnav {
+    background:#3171e4;
+    border-radius:10px 10px 0px 0px;
+    -moz-border-radius:10px 10px 0px 0px;
+    -webkit-border-radius:10px 10px 0px 0px;
+    padding:5px 0px;
+    border-bottom:#ffd800 1px solid;
+    text-align:center;
+}
+#sidebarnav a{
+    display:inline-block;
+    width: 19%;
+    *width: 19%;
+    box-sizing:border-box;
+    text-align:center;
+    color:#FFFFFF;
+    text-decoration:none;
+    font-size: 14px;
+    padding:5px 0px;
+    font-weight: bold;
+}
+
+#sidebarnav a:hover {
+    text-decoration:underline;
+    color:#FFFFFF;
+}
+
+#sidebarnav a.active {
+    background:#FFFFFF;
+    border-radius:5px 20px 5px 20px;
+    -moz-border-radius:5px 20px 5px 20px;
+    -webkit-border-radius:5px 20px 5px 20px;
+    color:#3171e4;
+}
+
+#widget-h2, .widget {
+    display:none;
+    padding:0px 10px;
+}
+
+#contentarea {
+    margin:0px;
+    border-radius:0px 0px 10px 10px;
+    -moz-border-radius:0px 0px 10px 10px;
+    -webkit-border-radius:0px 0px 10px 10px;
+}
+
+.ArticleTitle {
+   text-align:center;
+   border-bottom:2px solid #3171e4;
+   padding:10px 0px 20px 0px;
+   margin-bottom:20px;
+   font-size:18px;
+}
+
+.ArticleContent {
+}
+
+
+#footer {
+    margin:10px 0px;
+    padding:10px;
+    text-align:center;
+    border-radius:10px 10px;
+    -moz-border-radius:10px 10px;
+    -webkit-border-radius:10px 10px;
+    background:linear-gradient(top,#31adb9,#2b848b);
+    background:-webkit-linear-gradient(top,#31adb9,#2b848b);
+    background:-moz-linear-gradient(top,#31adb9,#2b848b);
+    color:#FFFFFF;
+}
+
+.ContactUsMain{
+    padding-bottom:20px;
+}
+
+.ContactUs {
+    width:60%;
+    margin:30px auto;
+    padding:30px 0px;
+    border-radius:5px 5px;
+    -moz-border-radius:5px 5px;
+    -webkit-border-radius:5px 5px;
+    background:#3171e4;
+    color:#FFFFFF;
+}
+
+.contactLine {
+    background:#FFFFFF;
+    color:#3171e4;
+    border-bottom:1px solid #3171e4;
+}
+
+.contactLable {
+    margin-bottom:10px;
+    text-align:right;
+    border-radius:5px 5px;
+    -moz-border-radius:5px 5px;
+    -webkit-border-radius:5px 5px;
+}

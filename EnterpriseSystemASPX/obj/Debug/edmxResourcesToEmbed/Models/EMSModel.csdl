@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnterpriseInfoManagementSysModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EMSEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Enterprise" EntityType="EnterpriseInfoManagementSysModel.Enterprise" />
+    <EntitySet Name="EnterpriseCases" EntityType="EnterpriseInfoManagementSysModel.EnterpriseCases" />
+    <EntitySet Name="EnterpriseDynamic" EntityType="EnterpriseInfoManagementSysModel.EnterpriseDynamic" />
+    <EntitySet Name="MEnterprise" EntityType="EnterpriseInfoManagementSysModel.MEnterprise" />
+    <EntitySet Name="MEnterpriseAdmin" EntityType="EnterpriseInfoManagementSysModel.MEnterpriseAdmin" />
+    <EntitySet Name="MEnterpriseAdvertising" EntityType="EnterpriseInfoManagementSysModel.MEnterpriseAdvertising" />
+    <EntitySet Name="MEnterpriseCases" EntityType="EnterpriseInfoManagementSysModel.MEnterpriseCases" />
+    <EntitySet Name="MEnterpriseMessage" EntityType="EnterpriseInfoManagementSysModel.MEnterpriseMessage" />
+    <EntitySet Name="sysdiagrams" EntityType="EnterpriseInfoManagementSysModel.sysdiagrams" />
+    <AssociationSet Name="FK_EnterpriseCases_Enterprise" Association="EnterpriseInfoManagementSysModel.FK_EnterpriseCases_Enterprise">
+      <End Role="Enterprise" EntitySet="Enterprise" />
+      <End Role="EnterpriseCases" EntitySet="EnterpriseCases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EnterpriseDynamic_Enterprise" Association="EnterpriseInfoManagementSysModel.FK_EnterpriseDynamic_Enterprise">
+      <End Role="Enterprise" EntitySet="Enterprise" />
+      <End Role="EnterpriseDynamic" EntitySet="EnterpriseDynamic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEnterpriseCases_MEnterprise" Association="EnterpriseInfoManagementSysModel.FK_MEnterpriseCases_MEnterprise">
+      <End Role="MEnterprise" EntitySet="MEnterprise" />
+      <End Role="MEnterpriseCases" EntitySet="MEnterpriseCases" />
+    </AssociationSet>
+    <EntitySet Name="Templates" EntityType="EnterpriseInfoManagementSysModel.Templates" />
+  </EntityContainer>
+  <EntityType Name="Enterprise">
+    <Key>
+      <PropertyRef Name="EnterpriseID" />
+    </Key>
+    <Property Name="EnterpriseID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EnterpriseName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="EnterprisePassword" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EnterpriseUrl" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EnterpriseAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="EnterpriseTelphoneNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EnterpriseBriefShort" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="EnterpriseBrief" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="EnterpriseEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EnterpriseRight" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EnterpriseLogo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="EnterpriseRegistTime" Type="DateTime" Precision="3" />
+    <Property Name="EnterpriseActive" Type="Boolean" />
+    <Property Name="EnterpriseStatus" Type="Boolean" />
+    <NavigationProperty Name="EnterpriseCases" Relationship="EnterpriseInfoManagementSysModel.FK_EnterpriseCases_Enterprise" FromRole="Enterprise" ToRole="EnterpriseCases" />
+    <NavigationProperty Name="EnterpriseDynamic" Relationship="EnterpriseInfoManagementSysModel.FK_EnterpriseDynamic_Enterprise" FromRole="Enterprise" ToRole="EnterpriseDynamic" />
+    <Property Name="TemplateID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EnterpriseCases">
+    <Key>
+      <PropertyRef Name="EnterpriseCasesID" />
+    </Key>
+    <Property Name="EnterpriseCasesID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EnterpriseID" Type="Int32" Nullable="false" />
+    <Property Name="EnterpriseTitle" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="EnterpriseContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Enterprise" Relationship="EnterpriseInfoManagementSysModel.FK_EnterpriseCases_Enterprise" FromRole="EnterpriseCases" ToRole="Enterprise" />
+  </EntityType>
+  <EntityType Name="EnterpriseDynamic">
+    <Key>
+      <PropertyRef Name="EnterpriseDynamicID" />
+    </Key>
+    <Property Name="EnterpriseDynamicID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EnterpriseID" Type="Int32" Nullable="false" />
+    <Property Name="EnterpriseDynamicTitle" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="EnterpriseDynamicContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Enterprise" Relationship="EnterpriseInfoManagementSysModel.FK_EnterpriseDynamic_Enterprise" FromRole="EnterpriseDynamic" ToRole="Enterprise" />
+  </EntityType>
+  <EntityType Name="MEnterprise">
+    <Key>
+      <PropertyRef Name="MEnterpriseID" />
+    </Key>
+    <Property Name="MEnterpriseID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MEnterpriseName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseTelphoneNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseBriefShort" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseBrief" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseRight" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseLogo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="MEnterpriseCases" Relationship="EnterpriseInfoManagementSysModel.FK_MEnterpriseCases_MEnterprise" FromRole="MEnterprise" ToRole="MEnterpriseCases" />
+  </EntityType>
+  <EntityType Name="MEnterpriseAdmin">
+    <Key>
+      <PropertyRef Name="MEnterpriseAdminID" />
+    </Key>
+    <Property Name="MEnterpriseAdminID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseAdminPassword" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MEnterpriseAdvertising">
+    <Key>
+      <PropertyRef Name="MEnterpriseAdvertisingID" />
+    </Key>
+    <Property Name="MEnterpriseAdvertisingID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MEnterpriseAdvertisingTitle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseAdvertisingImage" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MEnterpriseCases">
+    <Key>
+      <PropertyRef Name="MEnterpriseCasesID" />
+    </Key>
+    <Property Name="MEnterpriseCasesID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MEnterpriseID" Type="Int32" Nullable="false" />
+    <Property Name="MEnterpriseCasesTitle" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseCasesContent" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseCaseUrl" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="MEnterpriseCaseShow" Type="Boolean" Nullable="false" />
+    <Property Name="EnterprisUrl" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="MEnterprise" Relationship="EnterpriseInfoManagementSysModel.FK_MEnterpriseCases_MEnterprise" FromRole="MEnterpriseCases" ToRole="MEnterprise" />
+  </EntityType>
+  <EntityType Name="MEnterpriseMessage">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageEnterpriseName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="MessageEnterpriseTel" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MessageEnterpriseEmail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MessageIsRead" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_EnterpriseCases_Enterprise">
+    <End Role="Enterprise" Type="EnterpriseInfoManagementSysModel.Enterprise" Multiplicity="1" />
+    <End Role="EnterpriseCases" Type="EnterpriseInfoManagementSysModel.EnterpriseCases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Enterprise">
+        <PropertyRef Name="EnterpriseID" />
+      </Principal>
+      <Dependent Role="EnterpriseCases">
+        <PropertyRef Name="EnterpriseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EnterpriseDynamic_Enterprise">
+    <End Role="Enterprise" Type="EnterpriseInfoManagementSysModel.Enterprise" Multiplicity="1" />
+    <End Role="EnterpriseDynamic" Type="EnterpriseInfoManagementSysModel.EnterpriseDynamic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Enterprise">
+        <PropertyRef Name="EnterpriseID" />
+      </Principal>
+      <Dependent Role="EnterpriseDynamic">
+        <PropertyRef Name="EnterpriseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEnterpriseCases_MEnterprise">
+    <End Role="MEnterprise" Type="EnterpriseInfoManagementSysModel.MEnterprise" Multiplicity="1" />
+    <End Role="MEnterpriseCases" Type="EnterpriseInfoManagementSysModel.MEnterpriseCases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEnterprise">
+        <PropertyRef Name="MEnterpriseID" />
+      </Principal>
+      <Dependent Role="MEnterpriseCases">
+        <PropertyRef Name="MEnterpriseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Templates">
+    <Key>
+      <PropertyRef Name="TemplateID" />
+    </Key>
+    <Property Name="TemplateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TemplateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Template" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

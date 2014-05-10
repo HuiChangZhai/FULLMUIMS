@@ -1,0 +1,146 @@
+﻿.box-404 .div-formlogin
+{
+    width: 60%;
+    float: left;
+    border-right: solid 1px #ccc;
+    margin-bottom: 30px;
+}
+
+.box-404 .div-btnregister
+{
+    width: auto;
+    float: right;
+}
+
+    .box-404 .div-btnregister .btn-register
+    {
+        margin-right: 190px;
+        margin-top: 30px;
+    }
+
+.box-404 .div-formregister
+{
+    width: 60%;
+    float: left;
+    border-right: solid 1px #ccc;
+    margin-bottom: 30px;
+}
+
+.box-404 .div-btnlogin
+{
+    width: auto;
+    float: right;
+    height:100%;
+    vertical-align:middle;
+}
+
+.div-btnlogin a {
+    width: 129px;
+    height: 29px;
+    border: 1px solid #ef7b18;
+    background-color: #f2aa20;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    text-align: center;
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    padding-top: 8px;
+    margin-bottom: 44px;
+    margin-right: 102px;
+    margin-top: 10px;
+}
+
+.inputcss
+{
+    width: 260px;
+    height: 44px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    padding-left: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    margin-right: 20px;
+}
+
+.errinfo
+{
+    font-size: 14px;
+    color: #d9534f;
+    line-height: 28px;
+    font-weight: normal;
+}
+
+.fogetpwd
+{
+    margin-left: 132px;
+}
+
+.btnLogin
+{
+    width: 97px;
+    height: 28px;
+    border: 1px solid #0081ce;
+    background-color: #5b9bd9;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    text-align: center;
+    display: block;
+    color: #ffffff;
+    font-size: 16px;
+    padding-top: 8px;
+    margin-bottom: 44px;
+    margin-top: 18px;
+}
+
+    .btnLogin:hover
+    {
+        color: #ffffff !important;
+        background-color: #0081ce;
+    }
+
+.div-btnregister a
+{
+    width: 129px;
+    height: 29px;
+    border: 1px solid #ef7b18;
+    background-color: #f2aa20;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    text-align: center;
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    padding-top: 8px;
+    margin-bottom: 44px;
+    margin-right: 102px;
+    margin-top: 10px;
+}
+.div-btnregister .lalregister
+{
+    margin-top: 20px;
+    margin-left: -20px;
+}
+
+.div-btnregister a:hover
+{
+    color: #ffffff;
+    background-color: #ef7b18;
+}
+
+.postitionError
+{
+    float: right;
+    padding-top: 23px;
+    margin-right: 316px;
+}
+
+.div-btnregister .btnRegister{
+    margin-left: -20px;
+}

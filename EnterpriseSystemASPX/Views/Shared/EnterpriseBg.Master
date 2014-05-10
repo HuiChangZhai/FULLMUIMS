@@ -1,0 +1,165 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <meta charset="utf-8">
+    <link rel="icon" href="/Content/Images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/Content/Images/favicon.ico" type="image/x-icon" />
+    <link href="/Content/CSS/SiteBg.css" rel="stylesheet" />
+    <style type="text/css">
+        #MainTable td{
+            vertical-align:top;
+            border-collapse:collapse;
+            border-spacing:0px;
+        }
+        #MainContent {
+            width: 100%;
+        }
+    </style>
+    <script src="/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            <%
+                string MenuGroup = ViewBag.MenuGroup;
+            %>
+            var MenuGroup = '<%:MenuGroup %>';
+
+            $(".type").click(function () {
+                $(this).prevAll(".contentMenu").slideUp();
+                $(this).next(".contentMenu").slideDown();
+                $(this).nextAll(".contentMenu:gt(0)").slideUp();
+            });
+
+            switch (MenuGroup) {
+                case "Info":
+                    $($(".type")[0]).click();
+                    break;
+                case "Dynamic":
+                    $($(".type")[1]).click();
+                    break;
+                case "Case":
+                    $($(".type")[2]).click();
+                    break;
+                case "Password":
+                    $($(".type")[3]).click();
+                    break;
+                default:
+                    $($(".type")[0]).click();
+                    break;
+            }
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="ScriptAndStyleContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div>
+        <table cellspacing="0" cellpadding="0" width="100%" background="/Content/Images/bgImages/header_bg.jpg" border="0">
+            <tr>
+                <td width="260">
+                    <img height="56" src="/Content/Images/bgImages/header_left.png" width="260">
+                </td>
+                <td style="font-weight: bold; color: #fff; padding-top: 20px" align="middle">
+                    <%Enterprise enterprise = BLLEnterprise.Current;
+                      if (enterprise == null)
+                      { %>
+                    <a href="/Account/Login">请您先登录</a>
+                    <%}
+                      else
+                      {%>当前用户:<%:enterprise.EnterpriseEmail%>
+                    &nbsp;&nbsp;&nbsp; 
+                <a href="ChangePassword" style="color:white;">修改密码</a> &nbsp;&nbsp; 
+                <a href="/Home" style="color:white;">退出系统</a>
+                    <% }%>
+                    
+                </td>
+                <td align="right" width="268">
+                    <img height="56" src="/Content/Images/bgImages/header_right.png" width="268">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <hr size="10px" />
+    <table id="MainTable">
+        <tr>
+            <td style="width: 14%;">
+                <div style="width:100%;">
+                    <div>
+                        <table width="100%" height="280" border="0" cellpadding="0" cellspacing="0" bgcolor="#EEF2FB">
+                            <tr>
+                                <td width="100%" valign="top">
+                                    <div id="container">
+                                        <h1 class="type"><a href="javascript:void(0)">企业用户管理</a></h1>
+                                        <div class="contentMenu">
+                                            <ul class="MM">
+                                                <li><a href="/EnterpriseBg/EnterpriseInfo">企业信息</a></li>
+                                                <li><a href="/EnterpriseBg/EnterpriseInfoEdit">编辑企业信息</a></li>
+                                                <li><a href="/EnterpriseBg/EnterpriseBrief">编辑企业简介</a></li>
+                                            </ul>
+                                        </div>
+                                        <h1 class="type"><a href="javascript:void(0)">企业动态</a></h1>
+                                        <div class="contentMenu">
+                                            <ul class="MM">
+                                                <li><a href="/EnterpriseBg/EnterpriseDynamicList">企业动态</a></li>
+                                                <li><a href="/EnterpriseBg/EnterpriseDynamicAdd"">添加企业动态</a></li>
+                                            </ul>
+                                        </div>
+                                        <h1 class="type"><a href="javascript:void(0)">成功案例</a></h1>
+                                        <div class="contentMenu">
+                                            <ul class="MM">
+                                                <li><a href="/EnterpriseBg/EnterpriseCaseList">成功案例</a></li>
+                                                <li><a href="/EnterpriseBg/EnterpriseCaseAdd">添加成功案例</a></li>
+                                            </ul>
+                                        </div>
+                                        <h1 class="type"><a href="javascript:void(0)">修改密码</a></h1>
+                                        <div class="contentMenu">
+                                            <ul class="MM">
+                                                <li><a href="/EnterpriseBg/ChangePassword">修改密码</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+            <td style="width:80%;">
+                <div style="width:100%;">
+                    <div>
+                        <table class="contentHeader" width="100%">
+                            <tr>
+                                <td width="17" valign="top" background="/Content/Images/bgImages/mail_leftbg.gif">
+                                    <img src="/Content/Images/bgImages/left-top-right.gif" width="17" height="29" />
+                                </td>
+                                <td valign="top" background="/Content/Images/bgImages/content-bg.gif">
+                                    <table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
+                                        <tr>
+                                            <td height="31">
+                                                <div class="titlebt" style="line-height:30px;"><%:(string)ViewBag.PageTitle %></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td width="16" valign="top" background="/Content/Images/bgImages/mail_rightbg.gif">
+                                    <img src="/Content/Images/bgImages/nav-right-bg.gif" width="16" height="29" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="padding: 0px; width: 100%;">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
